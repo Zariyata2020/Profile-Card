@@ -1,4 +1,5 @@
 # Zariyat Adeniran - Profile Card
+https://zariyata2020.github.io/Profile-Card/
 
 A responsive, accessible profile card component built with semantic HTML, CSS, and vanilla JavaScript.
 
@@ -125,3 +126,4 @@ Feel free to reach out via:
 - LinkedIn: [linkedin.com/in/zariyat-adeniran-ab8765327](https://linkedin.com/in/zariyat-adeniran-ab8765327)
 - GitHub: [github.com/zariyata2020](https://github.com/zariyata2020)
 - Twitter: [@zariyat54327](https://twitter.com/zariyat54327)
+
