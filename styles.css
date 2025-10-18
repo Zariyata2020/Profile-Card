@@ -1,0 +1,379 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  background: linear-gradient(135deg, #a8d8d8 0%, #7eccc4 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: #333;
+  overflow-y: auto;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.background-decoration {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.1) 25%,
+      transparent 25%
+    ),
+    linear-gradient(-45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(255, 255, 255, 0.1) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(255, 255, 255, 0.1) 75%);
+  background-size: 60px 60px;
+  background-position: 0 0, 0 30px, 30px -30px, -30px 0px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.profile-card {
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 40px;
+  padding: 40px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.avatar-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.avatar {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #7eccc4;
+  box-shadow: 0 10px 30px rgba(126, 204, 196, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.avatar:hover {
+  transform: scale(1.05);
+}
+
+.profile-header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.user-name {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 5px;
+  line-height: 1.2;
+}
+
+.user-title {
+  font-size: 14px;
+  color: #7eccc4;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.user-bio {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555;
+  margin: 0;
+}
+
+.time-section {
+  background: #f5f5f5;
+  padding: 10px 14px;
+  border-radius: 6px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.time-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #666;
+  margin: 0;
+}
+
+.user-time {
+  font-size: 13px;
+  font-weight: 700;
+  color: #7eccc4;
+  font-family: "Courier New", monospace;
+  margin: 0;
+}
+
+.social-section {
+  margin: 0;
+  width: 100%;
+}
+
+.social-links {
+  list-style: none;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: #f0f0f0;
+  border-radius: 50%;
+  text-decoration: none;
+  color: #333;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.social-link:hover,
+.social-link:focus {
+  background: #7eccc4;
+  color: white;
+  transform: translateY(-3px);
+  outline: none;
+}
+
+.social-link:focus {
+  border-color: #5a9f99;
+}
+
+.social-link svg {
+  width: 20px;
+  height: 20px;
+}
+
+.hobbies-section,
+.dislikes-section {
+  margin: 0;
+}
+
+.hobbies-section h2,
+.dislikes-section h2 {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1a1a1a;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  margin-bottom: 8px;
+}
+
+.hobbies-list,
+.dislikes-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.hobbies-list li,
+.dislikes-list li {
+  background: #e8f5f4;
+  color: #2a7a72;
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.dislikes-list li {
+  background: #ffe8e8;
+  color: #c44444;
+}
+
+.connect-btn {
+  background: #7eccc4;
+  color: white;
+  border: none;
+  padding: 12px 32px;
+  border-radius: 24px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 8px;
+  align-self: center;
+}
+
+.connect-btn:hover {
+  background: #5a9f99;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(126, 204, 196, 0.3);
+}
+
+.connect-btn:focus {
+  outline: 2px solid #5a9f99;
+  outline-offset: 2px;
+}
+
+.connect-btn:active {
+  transform: translateY(0);
+}
+
+/* RESPONSIVE DESIGN */
+
+/* Tablet (768px and below) */
+@media (max-width: 768px) {
+  body {
+    min-height: 100vh;
+  }
+
+  .profile-card {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 30px;
+  }
+
+  .left-column {
+    order: -1;
+  }
+
+  .user-name {
+    font-size: 28px;
+  }
+
+  .avatar {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+/* Mobile (480px and below) */
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .profile-card {
+    padding: 20px;
+    gap: 15px;
+    border-radius: 16px;
+  }
+
+  .user-name {
+    font-size: 24px;
+  }
+
+  .user-title {
+    font-size: 12px;
+  }
+
+  .user-bio {
+    font-size: 13px;
+  }
+
+  .avatar {
+    width: 140px;
+    height: 140px;
+  }
+
+  .social-links {
+    gap: 10px;
+  }
+
+  .social-link {
+    width: 44px;
+    height: 44px;
+  }
+
+  .social-link svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .connect-btn {
+    width: 100%;
+  }
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #7eccc4;
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: more) {
+  .profile-card {
+    border: 2px solid #333;
+  }
+
+  .social-link {
+    border: 1px solid #333;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
