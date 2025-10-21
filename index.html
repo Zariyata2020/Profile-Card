@@ -10,15 +10,21 @@
     <div class="background-decoration"></div>
     
     <main class="container">
-        <!-- Profile Card -->
+        <nav class="card-nav" data-testid="test-main-nav">
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link active">Profile</a></li>
+                <li><a href="about.html" class="nav-link">About Me</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+
         <article class="profile-card" data-testid="test-profile-card">
-            
+
             <div class="left-column">
-                <!-- Avatar Section -->
                 <figure class="avatar-section">
                     <img 
                         src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop" 
-                        alt="Zariyat Adeniran " 
+                        alt="Zariyat Adeniran" 
                         class="avatar"
                         data-testid="test-user-avatar"
                     >
