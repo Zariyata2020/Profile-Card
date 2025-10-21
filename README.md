@@ -16,11 +16,12 @@ A responsive, accessible profile card component built with semantic HTML, CSS, a
 ## Project Structure
 
 \`\`\`
-profile-card/
-├── index.html      # Main HTML file with semantic markup
-├── styles.css      # Responsive styling with accessibility features
-├── script.js       # JavaScript for time updates and interactions
-└── README.md       # This file
+profile-card/ 
+├── index.html # Main HTML file 
+├── styles.css # Styling and layout 
+├── script.js # Time and interactions 
+├── about.html # Extended bio and goals 
+└── README.md # Project overview
 \`\`\`
 
 ## Getting Started
@@ -126,4 +127,5 @@ Feel free to reach out via:
 - LinkedIn: [linkedin.com/in/zariyat-adeniran-ab8765327](https://linkedin.com/in/zariyat-adeniran-ab8765327)
 - GitHub: [github.com/zariyata2020](https://github.com/zariyata2020)
 - Twitter: [@zariyat54327](https://twitter.com/zariyat54327)
+
 
