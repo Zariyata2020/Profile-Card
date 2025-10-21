@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
       timeElement.textContent = currentTime
     }
 
-    // Update time immediately
     updateTime()
 
     setInterval(updateTime, 1000)
@@ -198,3 +197,4 @@ document.addEventListener("DOMContentLoaded", () => {
   // Log that profile card is initialized
   console.log("Profile card initialized successfully")
 })
+
